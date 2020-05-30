@@ -149,3 +149,50 @@ let math = (value = 0) => {
 let temp = math(3).sum(8).sum(11).sum(-2).mul(3).mul(0.5).square().square(1 / 2).val
 console.log('temp= ', temp);
 ```	
+#
+#### 7. fizzbuzz
+- rust
+```rust
+fn main() {
+    println!("Hello, world!");
+    fizzbuzz_to(30);
+}
+fn fizzbuzz_to(n:u32)->(){
+    for i in 1..=n {
+        match (i%5==0,i%3==0){
+            (true,true)=>println!("fizzbuzz"),
+            (true,false)=>println!("buzz"),
+            (false,true)=>println!("fizz"),
+            (_,_)=>println!("{}",i),
+        }
+    }
+}
+```
+#
+#### 8.factorial 
+- rust
+```rust
+fn main() {
+    let n = factorial_num(9);
+    println!("factorial of 9 = {}",n);
+    
+}
+fn factorial_num(num:u32)->u32{
+    return (1..=num).fold(1,|acc,num|acc*num);
+}
+```
+```rust
+fn sum_of_first_n(num:u32)->u32{
+	return (1..=num).fold(0,|acc,num|acc+num)
+}
+```
+```rust
+fn sum_of_first_n_odd(num:u32)->u32{
+	return (1..=num).filter(|num|num%2!=0).fold(0,|acc,num|acc+num)
+}
+```
+```rust
+fn sum_of_first_n_square(num:u32)->u32{
+    return (1..=num).map(|num|num*num).fold(0,|acc,num|acc+num)
+}
+```
