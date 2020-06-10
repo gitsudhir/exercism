@@ -173,12 +173,12 @@ fn fizzbuzz_to(n:u32)->(){
 - rust
 ```rust
 fn main() {
-    let n = factorial_num(9);
+	let n = factorial_num(9);
     println!("factorial of 9 = {}",n);
     
 }
 fn factorial_num(num:u32)->u32{
-    return (1..=num).fold(1,|acc,num|acc*num);
+	return (1..=num).fold(1,|acc,num|acc*num);
 }
 ```
 ```rust
@@ -193,6 +193,35 @@ fn sum_of_first_n_odd(num:u32)->u32{
 ```
 ```rust
 fn sum_of_first_n_square(num:u32)->u32{
-    return (1..=num).map(|num|num*num).fold(0,|acc,num|acc+num)
+	return (1..=num).map(|num|num*num).fold(0,|acc,num|acc+num)
+}
+```
+#
+#### 9. struct / trait / impl / impl for / function overloading 
+```rust
+struct Log {}
+trait LogTrait<T>{
+	fn log(input:T);
+}
+impl LogTrait<i32> for Log{
+    fn log(input:i32){
+        println!("{}",input);
+    }
+}
+impl LogTrait<String> for Log{
+    fn log(input:String){
+        println!("{}",input);
+    }
+}
+impl LogTrait<&str> for Log{
+    fn log(input:&str){
+        println!("{}",input);
+    }
+}
+
+fn main() {
+    Log::log("world!");
+    Log::log(String::from("sudhir"));
+    Log::log(45);
 }
 ```
