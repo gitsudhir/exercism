@@ -204,24 +204,29 @@ trait LogTrait<T>{
 	fn log(input:T);
 }
 impl LogTrait<i32> for Log{
-    fn log(input:i32){
-        println!("{}",input);
+	fn log(input:i32){
+		println!("{}",input);
     }
 }
 impl LogTrait<String> for Log{
-    fn log(input:String){
-        println!("{}",input);
+	fn log(input:String){
+		println!("{}",input);
     }
 }
 impl LogTrait<&str> for Log{
-    fn log(input:&str){
-        println!("{}",input);
+	fn log(input:&str){
+		println!("{}",input);
     }
 }
 
 fn main() {
-    Log::log("world!");
+	Log::log("world!");
     Log::log(String::from("sudhir"));
     Log::log(45);
 }
 ```
+#
+#### 10. ownership 
+[Rust Borrowing Balloons](https://www.youtube.com/watch?v=rEsoImv7vq8)[video]
+
+#
